@@ -44,16 +44,26 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6 fade-in">
-    <h1 class="text-5xl md:text-6xl text-gray-900 mb-4">Elevating Excellence</h1>
-    <p class="text-lg md:text-xl max-w-2xl text-gray-700 mb-6">
+<!-- Hero -->
+<section id="home" 
+  class="h-screen flex flex-col justify-center items-center text-center px-6 fade-in bg-cover bg-center relative" 
+  style="background-image: url('https://images.unsplash.com/photo-1598514982235-7e2e2da2d0f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80');">
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <!-- Text Content -->
+  <div class="relative z-10 max-w-2xl">
+    <h1 class="text-5xl md:text-6xl text-white mb-4 font-serif">Elevating Excellence</h1>
+    <p class="text-lg md:text-xl text-gray-200 mb-6">
       Strategic leadership and unmatched service — from the skies to the ground.
     </p>
     <a href="#about" class="px-6 py-3 bg-yellow-700 text-white rounded-lg shadow hover:bg-yellow-800 transition">
       Learn More
     </a>
-  </section>
+  </div>
+</section>
+
 
   <!-- About Us -->
   <section id="about" class="py-20 px-6 bg-[#f9f6f1] fade-in">
