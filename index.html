@@ -5,10 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LANKEN Holdings</title>
   <meta name="description" content="LANKEN Holdings - Elevating excellence at every altitude." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html {
       scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: #f3eee7; /* Warm beige */
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
     }
     .fade-in {
       opacity: 0;
@@ -21,36 +29,36 @@
     }
   </style>
 </head>
-<body class="bg-[#faf8f5] text-gray-800 font-sans">
+<body class="text-gray-800">
 
   <!-- Navbar -->
-  <nav class="fixed w-full bg-white shadow z-50">
+  <nav class="fixed w-full bg-white/95 backdrop-blur shadow z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <div class="text-2xl font-bold text-gray-900">LANKEN Holdings</div>
       <div class="space-x-6 text-lg">
-        <a href="#home" class="hover:text-yellow-600">Home</a>
-        <a href="#about" class="hover:text-yellow-600">About</a>
-        <a href="#companies" class="hover:text-yellow-600">Our Companies</a>
-        <a href="#contact" class="hover:text-yellow-600">Contact</a>
+        <a href="#home" class="hover:text-yellow-700">Home</a>
+        <a href="#about" class="hover:text-yellow-700">About</a>
+        <a href="#companies" class="hover:text-yellow-700">Our Companies</a>
+        <a href="#contact" class="hover:text-yellow-700">Contact</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6 fade-in">
-    <h1 class="text-5xl md:text-6xl font-serif text-gray-900 mb-4">Elevating Excellence</h1>
-    <p class="text-lg md:text-xl max-w-2xl text-gray-600 mb-6">
+    <h1 class="text-5xl md:text-6xl text-gray-900 mb-4">Elevating Excellence</h1>
+    <p class="text-lg md:text-xl max-w-2xl text-gray-700 mb-6">
       Strategic leadership and unmatched service — from the skies to the ground.
     </p>
-    <a href="#about" class="px-6 py-3 bg-yellow-600 text-white rounded-lg shadow hover:bg-yellow-700 transition">
+    <a href="#about" class="px-6 py-3 bg-yellow-700 text-white rounded-lg shadow hover:bg-yellow-800 transition">
       Learn More
     </a>
   </section>
 
   <!-- About Us -->
-  <section id="about" class="py-20 px-6 fade-in">
+  <section id="about" class="py-20 px-6 bg-[#f9f6f1] fade-in">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-4xl font-serif text-gray-900 mb-8 text-center">About Us</h2>
+      <h2 class="text-4xl text-gray-900 mb-8 text-center">About Us</h2>
       <p class="text-lg leading-relaxed text-gray-700">
         LANKEN Holdings is a diversified business entity built on a foundation of vision, integrity, and results.
         While our roots run deep in the aviation industry, our expertise extends across multiple sectors —
@@ -72,10 +80,10 @@
   <!-- Our Companies -->
   <section id="companies" class="py-20 px-6 bg-gray-100 fade-in">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-4xl font-serif text-gray-900 mb-8 text-center">Our Companies</h2>
+      <h2 class="text-4xl text-gray-900 mb-8 text-center">Our Companies</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">JetStream CX</h3>
+          <h3 class="text-2xl mb-2">JetStream CX</h3>
           <p class="text-gray-700">Information coming soon.</p>
         </div>
       </div>
@@ -83,24 +91,24 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 px-6 fade-in">
+  <section id="contact" class="py-20 px-6 bg-[#f9f6f1] fade-in">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl font-serif text-gray-900 mb-8 text-center">Contact Us</h2>
+      <h2 class="text-4xl text-gray-900 mb-8 text-center">Contact Us</h2>
       <form name="contact" method="POST" data-netlify="true" class="bg-white p-8 rounded-lg shadow-lg space-y-6">
         <input type="hidden" name="form-name" value="contact">
         <div>
           <label class="block text-gray-700 mb-2">Name</label>
-          <input type="text" name="name" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-yellow-600" />
+          <input type="text" name="name" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-yellow-700" />
         </div>
         <div>
           <label class="block text-gray-700 mb-2">Email</label>
-          <input type="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-yellow-600" />
+          <input type="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-yellow-700" />
         </div>
         <div>
           <label class="block text-gray-700 mb-2">Message</label>
-          <textarea name="message" rows="5" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-yellow-600"></textarea>
+          <textarea name="message" rows="5" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-yellow-700"></textarea>
         </div>
-        <button type="submit" class="bg-yellow-600 text-white px-6 py-3 rounded-lg shadow hover:bg-yellow-700 transition">
+        <button type="submit" class="bg-yellow-700 text-white px-6 py-3 rounded-lg shadow hover:bg-yellow-800 transition">
           Send Message
         </button>
       </form>
@@ -114,7 +122,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Fade-in animation
     const faders = document.querySelectorAll('.fade-in');
     const appearOnScroll = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
