@@ -2,148 +2,176 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LANKEN Holdings</title>
-  <meta name="description" content="LANKEN Holdings - Elevating excellence at every altitude." />
+  <meta name="description" content="LANKEN Holdings — Elevating excellence at every altitude." />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Lato', sans-serif;
-      background-color: #f3eee7; /* Warm beige */
-    }
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-    }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
-<body class="text-gray-800">
+<body class="text-gray-100 bg-gradient-to-r from-stone-900 via-amber-800 to-amber-600 min-h-screen">
 
   <!-- Navbar -->
-  <nav class="fixed w-full bg-white/95 backdrop-blur shadow z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="text-2xl font-bold text-gray-900">LANKEN Holdings</div>
-      <div class="space-x-6 text-lg">
-        <a href="#home" class="hover:text-yellow-700">Home</a>
-        <a href="#about" class="hover:text-yellow-700">About</a>
-        <a href="#companies" class="hover:text-yellow-700">Our Companies</a>
-        <a href="#contact" class="hover:text-yellow-700">Contact</a>
+  <nav class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="text-xl md:text-2xl font-bold text-gray-900">LANKEN Holdings</div>
+      <div class="hidden md:flex items-center gap-6 text-gray-800">
+        <a href="#home" class="hover:text-amber-800">Home</a>
+        <a href="#about" class="hover:text-amber-800">About</a>
+        <a href="#companies" class="hover:text-amber-800">Our Companies</a>
+        <a href="#contact" class="hover:text-amber-800">Contact</a>
+      </div>
+      <button aria-label="Open Menu" class="md:hidden px-3 py-2 rounded hover:bg-gray-100" onclick="document.getElementById('mnav').classList.toggle('hidden')">
+        ☰
+      </button>
+    </div>
+    <!-- Mobile Nav -->
+    <div id="mnav" class="hidden md:hidden border-t border-gray-200 bg-white/90">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-3 text-gray-900">
+        <a href="#home" class="hover:text-amber-800" onclick="this.closest('#mnav').classList.add('hidden')">Home</a>
+        <a href="#about" class="hover:text-amber-800" onclick="this.closest('#mnav').classList.add('hidden')">About</a>
+        <a href="#companies" class="hover:text-amber-800" onclick="this.closest('#mnav').classList.add('hidden')">Our Companies</a>
+        <a href="#contact" class="hover:text-amber-800" onclick="this.closest('#mnav').classList.add('hidden')">Contact</a>
       </div>
     </div>
   </nav>
 
-<!-- Hero -->
-<section id="home"
-  class="h-screen flex flex-col justify-center items-center text-center px-6 fade-in bg-gradient-to-r from-yellow-900 via-yellow-700 to-yellow-500 relative">
+  <!-- Spacer for fixed nav -->
+  <div class="h-20"></div>
 
-  <div class="relative z-10 max-w-2xl">
-    <h1 class="text-5xl md:text-6xl text-white mb-4 font-serif">Elevating Excellence</h1>
-    <p class="text-lg md:text-xl text-gray-100 mb-6">
-      Strategic leadership and unmatched service — from the skies to the ground.
-    </p>
-    <a href="#about" class="px-6 py-3 bg-white text-yellow-800 rounded-lg shadow hover:bg-gray-100 transition">
-      Learn More
-    </a>
-  </div>
-</section>
+  <!-- Hero -->
+  <section id="home" class="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 fade-in relative">
+    <!-- optional subtle overlay to deepen gradient at top -->
+    <div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
 
-
-
-
-
-  <!-- About Us -->
-  <section id="about" class="py-20 px-6 bg-[#f9f6f1] fade-in">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-4xl text-gray-900 mb-8 text-center">About Us</h2>
-      <p class="text-lg leading-relaxed text-gray-700">
-        LANKEN Holdings is a diversified business entity built on a foundation of vision, integrity, and results.
-        While our roots run deep in the aviation industry, our expertise extends across multiple sectors —
-        united by a single mission: to elevate the quality of services and customer experiences wherever we operate.
+    <div class="relative z-10 max-w-3xl">
+      <h1 class="text-5xl md:text-6xl text-white mb-4">Elevating Excellence</h1>
+      <p class="text-lg md:text-xl text-gray-100/90 mb-8">
+        Strategic leadership and unmatched service — from the skies to the ground.
       </p>
-      <p class="text-lg leading-relaxed text-gray-700 mt-6">
-        We partner with businesses to refine operations, enhance service delivery, and create lasting value for their
-        clients. Our approach blends strategic insight with hands-on execution, ensuring measurable improvements
-        that stand the test of time.
-      </p>
-      <p class="text-lg leading-relaxed text-gray-700 mt-6">
-        As a parent company, LANKEN Holdings provides the leadership, resources, and guidance that allow each of our
-        brands to thrive. Whether in the skies or on the ground, our commitment remains the same — delivering
-        excellence at every altitude.
-      </p>
+      <a href="#about"
+         class="inline-block px-7 py-3 rounded-lg bg-white text-amber-800 font-semibold shadow hover:bg-gray-100 transition">
+        Learn More
+      </a>
     </div>
   </section>
 
- <!-- Our Companies -->
-<section id="companies" class="py-20 px-6 bg-gray-100 fade-in">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-4xl text-gray-900 mb-8 text-center">Our Companies</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <a href="https://www.jetstreamcx.com"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition block">
-        <h3 class="text-2xl mb-2">JetStream CX</h3>
-        <p class="text-gray-700">Information coming soon.</p>
-      </a>
+  <!-- About -->
+  <section id="about" class="py-20 px-6 fade-in">
+    <div class="max-w-5xl mx-auto">
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-8 md:p-10 shadow ring-1 ring-white/10">
+        <h2 class="text-4xl text-white mb-6 text-center">About Us</h2>
+        <div class="space-y-6 text-[1.075rem] leading-relaxed text-gray-100">
+          <p>
+            LANKEN Holdings is a diversified business entity built on a foundation of vision, integrity, and results.
+            While our roots run deep in the aviation industry, our expertise extends across multiple sectors — united
+            by a single mission: to elevate the quality of services and customer experiences wherever we operate.
+          </p>
+          <p>
+            We partner with businesses to refine operations, enhance service delivery, and create lasting value for
+            their clients. Our approach blends strategic insight with hands-on execution, ensuring measurable
+            improvements that stand the test of time.
+          </p>
+          <p>
+            As a parent company, LANKEN Holdings provides the leadership, resources, and guidance that allow each of
+            our brands to thrive. Whether in the skies or on the ground, our commitment remains the same — delivering
+            excellence at every altitude.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Our Companies -->
+  <section id="companies" class="py-20 px-6 fade-in">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl text-white mb-10 text-center">Our Companies</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- JetStream CX Card (clickable) -->
+        <a href="https://www.jetstreamcx.com" target="_blank" rel="noopener noreferrer"
+           class="block bg-white/90 rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition ring-1 ring-black/5">
+          <h3 class="text-2xl md:text-3xl text-gray-900 mb-2">JetStream CX</h3>
+          <p class="text-gray-700">Information coming soon.</p>
+        </a>
+
+        <!-- Placeholder card for future brands -->
+        <div class="bg-white/70 rounded-2xl p-6 md:p-8 shadow ring-1 ring-black/5">
+          <h3 class="text-2xl md:text-3xl text-gray-900 mb-2">Future Brand</h3>
+          <p class="text-gray-700">To be announced.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 px-6 bg-[#f9f6f1] fade-in">
+  <section id="contact" class="py-20 px-6 fade-in">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl text-gray-900 mb-8 text-center">Contact Us</h2>
-      <form name="contact" method="POST" data-netlify="true" class="bg-white p-8 rounded-lg shadow-lg space-y-6">
-        <input type="hidden" name="form-name" value="contact">
+      <h2 class="text-4xl text-white mb-10 text-center">Contact Us</h2>
+
+      <!-- Netlify form -->
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+            class="bg-white/90 rounded-2xl p-8 md:p-10 shadow-lg ring-1 ring-black/5 space-y-6">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden">
+          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+        </p>
+
         <div>
-          <label class="block text-gray-700 mb-2">Name</label>
-          <input type="text" name="name" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-yellow-700" />
+          <label class="block text-gray-800 mb-2 font-semibold">Name</label>
+          <input type="text" name="name" required
+                 class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-700" />
         </div>
+
         <div>
-          <label class="block text-gray-700 mb-2">Email</label>
-          <input type="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-yellow-700" />
+          <label class="block text-gray-800 mb-2 font-semibold">Email</label>
+          <input type="email" name="email" required
+                 class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-700" />
         </div>
+
         <div>
-          <label class="block text-gray-700 mb-2">Message</label>
-          <textarea name="message" rows="5" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-yellow-700"></textarea>
+          <label class="block text-gray-800 mb-2 font-semibold">Message</label>
+          <textarea name="message" rows="5" required
+                    class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-700"></textarea>
         </div>
-        <button type="submit" class="bg-yellow-700 text-white px-6 py-3 rounded-lg shadow hover:bg-yellow-800 transition">
+
+        <button type="submit"
+                class="inline-flex items-center justify-center rounded-lg bg-amber-700 text-white font-semibold px-6 py-3 shadow hover:bg-amber-800 transition">
           Send Message
         </button>
+
+        <p class="text-sm text-gray-600">
+          Submissions go to the Netlify dashboard for <span class="font-semibold">lankenholdings@gmail.com</span>.
+        </p>
       </form>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+  <footer class="py-8 text-center text-gray-100/90">
     <p>&copy; <span id="year"></span> LANKEN Holdings. All rights reserved.</p>
   </footer>
 
   <script>
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Fade-in on scroll
     const faders = document.querySelectorAll('.fade-in');
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1 });
-    faders.forEach(fader => appearOnScroll.observe(fader));
+    }, { threshold: 0.12 });
+    faders.forEach(el => io.observe(el));
   </script>
 </body>
 </html>
