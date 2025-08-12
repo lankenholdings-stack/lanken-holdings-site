@@ -5,8 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LANKEN Holdings</title>
   <meta name="description" content="LANKEN Holdings — Elevating excellence at every altitude." />
+
+  <!-- Fonts & Tailwind -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicon & Preload -->
+  <link rel="icon" type="image/png" href="Images/LANKEN%20LOGO.png" />
+  <link rel="preload" as="image" href="Images/LANKEN%20LOGO.png" />
+
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Lato', sans-serif; }
@@ -18,26 +25,27 @@
 <body class="text-gray-800 min-h-screen" style="background: linear-gradient(to bottom, #C48416, #C7AD57, #E6E1BC);">
 
   <!-- Navbar -->
-  <nav class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur shadow">
+  <nav class="fixed inset-x-0 top-0 z-50 bg-white/85 backdrop-blur shadow">
     <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="text-xl md:text-2xl font-bold text-gray-900">LANKEN Holdings</div>
-      <div class="hidden md:flex items-center gap-6 text-gray-800">
+      <a href="#home" class="flex items-center space-x-3">
+        <img src="Images/LANKEN%20LOGO.png" alt="LANKEN Holdings Logo" class="h-12 w-auto">
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-gray-900">
         <a href="#home" class="hover:text-amber-800">Home</a>
         <a href="#about" class="hover:text-amber-800">About</a>
         <a href="#companies" class="hover:text-amber-800">Our Companies</a>
         <a href="#contact" class="hover:text-amber-800">Contact</a>
       </div>
-      <button aria-label="Open Menu" class="md:hidden px-3 py-2 rounded hover:bg-gray-100" onclick="document.getElementById('mnav').classList.toggle('hidden')">
-        ☰
-      </button>
+      <button aria-label="Open Menu" class="md:hidden px-3 py-2 rounded hover:bg-gray-100"
+              onclick="document.getElementById('mnav').classList.toggle('hidden')">☰</button>
     </div>
     <!-- Mobile Nav -->
-    <div id="mnav" class="hidden md:hidden border-t border-gray-200 bg-white/90">
+    <div id="mnav" class="hidden md:hidden border-t border-gray-200 bg-white/95">
       <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-3 text-gray-900">
-        <a href="#home" class="hover:text-amber-800" onclick="this.closest('#mnav').classList.add('hidden')">Home</a>
-        <a href="#about" class="hover:text-amber-800" onclick="this.closest('#mnav').classList.add('hidden')">About</a>
-        <a href="#companies" class="hover:text-amber-800" onclick="this.closest('#mnav').classList.add('hidden')">Our Companies</a>
-        <a href="#contact" class="hover:text-amber-800" onclick="this.closest('#mnav').classList.add('hidden')">Contact</a>
+        <a href="#home" onclick="this.closest('#mnav').classList.add('hidden')" class="hover:text-amber-800">Home</a>
+        <a href="#about" onclick="this.closest('#mnav').classList.add('hidden')" class="hover:text-amber-800">About</a>
+        <a href="#companies" onclick="this.closest('#mnav').classList.add('hidden')" class="hover:text-amber-800">Our Companies</a>
+        <a href="#contact" onclick="this.closest('#mnav').classList.add('hidden')" class="hover:text-amber-800">Contact</a>
       </div>
     </div>
   </nav>
@@ -49,7 +57,7 @@
   <section id="home" class="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 fade-in relative">
     <div class="relative z-10 max-w-3xl">
       <h1 class="text-5xl md:text-6xl text-white mb-4">Elevating Excellence</h1>
-      <p class="text-lg md:text-xl text-gray-100/90 mb-8">
+      <p class="text-lg md:text-xl text-white/90 mb-8">
         Strategic leadership and unmatched service — from the skies to the ground.
       </p>
       <a href="#about"
@@ -140,7 +148,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-8 text-center text-gray-800">
+  <footer class="py-8 text-center text-gray-900/80">
     <p>&copy; <span id="year"></span> LANKEN Holdings. All rights reserved.</p>
   </footer>
 
@@ -148,12 +156,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     const faders = document.querySelectorAll('.fade-in');
     const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          obs.unobserve(e.target);
-        }
-      });
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
     }, { threshold: 0.12 });
     faders.forEach(el => io.observe(el));
   </script>
