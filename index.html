@@ -113,53 +113,19 @@
 
   <!-- Contact -->
   <section id="contact" class="py-20 px-6 fade-in">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl text-white mb-10 text-center">Contact Us</h2>
-
-      <!-- ✅ Netlify-ready form -->
-      <form name="contact"
-            method="POST"
-            netlify
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            action="/success.html"
-            class="bg-white/90 rounded-2xl p-8 md:p-10 shadow-lg ring-1 ring-black/5 space-y-6">
-
-        <!-- Required hidden form-name so Netlify can detect it at build time -->
-        <input type="hidden" name="form-name" value="contact" />
-
-        <!-- Honeypot (must match netlify-honeypot attr) -->
-        <p class="hidden">
-          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl text-white mb-10">Contact Us</h2>
+      <div class="bg-white/90 rounded-2xl p-8 md:p-10 shadow-lg ring-1 ring-black/5 space-y-4">
+        <p class="text-lg text-gray-800">
+          <span class="font-semibold">Email:</span>
+          <a href="mailto:lankenholdings@gmail.com" class="text-amber-700 hover:underline">
+            lankenholdings@gmail.com
+          </a>
         </p>
-
-        <div>
-          <label class="block text-gray-800 mb-2 font-semibold" for="name">Name</label>
-          <input id="name" type="text" name="name" required
-                 class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-700" />
-        </div>
-
-        <div>
-          <label class="block text-gray-800 mb-2 font-semibold" for="email">Email</label>
-          <input id="email" type="email" name="email" required
-                 class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-700" />
-        </div>
-
-        <div>
-          <label class="block text-gray-800 mb-2 font-semibold" for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required
-                    class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-700"></textarea>
-        </div>
-
-        <button type="submit"
-                class="inline-flex items-center justify-center rounded-lg bg-amber-700 text-white font-semibold px-6 py-3 shadow hover:bg-amber-800 transition">
-          Send Message
-        </button>
-
-        <p class="text-sm text-gray-600">
-          Submissions go to the Netlify dashboard for <span class="font-semibold">lankenholdings@gmail.com</span>.
+        <p class="text-lg text-gray-800">
+          <span class="font-semibold">Location:</span> Louisville, KY
         </p>
-      </form>
+      </div>
     </div>
   </section>
 
