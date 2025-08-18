@@ -2,174 +2,257 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LANKEN Holdings</title>
-  <meta name="description" content="LANKEN Holdings — Contact us" />
-  <link rel="icon" href="/favicon.ico" />
+  <meta name="description" content="LANKEN Holdings — A parent company building and backing ventures with integrity and performance." />
+
+  <!-- Favicon (place your icon at /Images/favicon.ico) -->
+  <link rel="icon" href="/Images/favicon.ico" />
+
   <style>
-    :root {
-      --gold-1: #C48416;
-      --gold-2: #C7AD57;
-      --gold-3: #E6E1BC;
-      --bg: linear-gradient(to bottom, var(--gold-1), var(--gold-2), var(--gold-3));
-      --text: #1a1a1a;
-      --muted: #5a5a5a;
-      --card: #ffffffcc;
-      --radius: 16px;
+    :root{
+      --gold-1:#C48416;  /* darkest (top) */
+      --gold-2:#C7AD57;
+      --gold-3:#E6E1BC;  /* lightest (bottom) */
+      --text:#111;
+      --muted:#5e5e5e;
+      --card:#ffffffcc;
+      --radius:18px;
+      --maxw:1120px;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color: var(--text);
-      background: var(--bg) fixed;
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
+      color:var(--text);
+      background:linear-gradient(to bottom, var(--gold-1), var(--gold-2), var(--gold-3)) fixed;
     }
-    header, footer { padding: 20px; }
-    header {
-      display: flex; align-items: center; justify-content: space-between;
-      max-width: 1100px; margin: 0 auto; width: 100%;
+    a{color:inherit}
+    .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{
+      position:sticky; top:0;
+      backdrop-filter:saturate(1.2) blur(8px);
+      background:linear-gradient(to bottom, rgba(255,255,255,.75), rgba(255,255,255,.55));
+      border-bottom:1px solid rgba(0,0,0,.06);
+      z-index:10;
     }
-    .brand {
-      display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit;
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 0;
     }
-    .brand img { height: 40px; width: auto; display: block; }
-    .brand span { font-weight: 700; letter-spacing: 0.02em; }
-    main { flex: 1; display: grid; place-items: center; padding: 40px 16px; }
-    .wrap { width: 100%; max-width: 1100px; margin: 0 auto; }
-    .card {
-      background: var(--card);
-      backdrop-filter: blur(6px);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 30px rgba(0,0,0,.12);
-      padding: 28px;
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand img{height:42px;width:auto;display:block}
+    .brand span{font-weight:800;letter-spacing:.02em}
+    .menu{display:flex;gap:18px}
+    .menu a{
+      text-decoration:none;padding:10px 12px;border-radius:10px;font-weight:600;color:#222;
     }
-    h1, h2 { margin: 0 0 12px; }
-    p.lead { color: var(--muted); margin: 0 0 24px; }
-    .grid {
-      display: grid; gap: 24px;
+    .menu a:hover{background:rgba(0,0,0,.06)}
+
+    /* Hero */
+    .hero{
+      padding:64px 0 40px;
+    }
+    .hero-inner{
+      display:grid;gap:28px;align-items:center;
       grid-template-columns: 1fr;
     }
-    @media (min-width: 880px) {
-      .grid { grid-template-columns: 1.1fr 0.9fr; }
+    @media (min-width: 900px){ .hero-inner{ grid-template-columns: 1.2fr .8fr; } }
+    .hero h1{margin:0;font-size:clamp(32px, 4vw, 48px);line-height:1.1}
+    .lead{color:var(--muted);font-size:clamp(16px, 1.6vw, 18px)}
+    .card{
+      background:var(--card);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:var(--radius);
+      box-shadow:0 12px 30px rgba(0,0,0,.12);
+      padding:24px;
     }
-    form label { display: block; font-weight: 600; margin: 12px 0 6px; }
-    form input, form textarea {
-      width: 100%;
-      border: 1px solid #d7d7d7;
-      border-radius: 10px;
-      padding: 12px 14px;
-      font-size: 16px;
-      background: #fff;
-      outline: none;
-      transition: border-color .2s, box-shadow .2s;
+
+    /* Sections */
+    section{scroll-margin-top:90px}
+    .section{padding:40px 0}
+    .section h2{margin:0 0 10px}
+    .muted{color:var(--muted)}
+
+    /* Companies */
+    .grid{
+      display:grid;gap:18px;grid-template-columns:1fr;
     }
-    form input:focus, form textarea:focus {
-      border-color: #b08a2a;
-      box-shadow: 0 0 0 4px rgba(176,138,42,.15);
+    @media (min-width: 760px){ .grid{ grid-template-columns: repeat(3, 1fr); } }
+    .tile{
+      background:#fff;border:1px solid rgba(0,0,0,.06);
+      border-radius:16px;padding:18px;min-height:140px;
+      display:flex;flex-direction:column;gap:8px;
     }
-    .row { display: grid; grid-template-columns: 1fr; gap: 14px; }
-    @media (min-width: 560px) {
-      .row { grid-template-columns: 1fr 1fr; }
+    .tile h3{margin:0;font-size:18px}
+    .tag{font-size:12px;border:1px solid rgba(0,0,0,.1);padding:2px 8px;border-radius:999px;width:max-content;color:#333}
+
+    /* Contact form */
+    form label{display:block;font-weight:700;margin:12px 0 6px}
+    form input, form textarea{
+      width:100%;padding:12px 14px;border:1px solid #d7d7d7;border-radius:12px;background:#fff;
+      font-size:16px;outline:none;transition:border-color .2s, box-shadow .2s;
     }
-    button[type="submit"] {
-      margin-top: 14px;
-      display: inline-flex; align-items: center; justify-content: center;
-      gap: 8px; padding: 12px 18px; border: 0; border-radius: 12px;
-      font-weight: 700; cursor: pointer; background: #1f1f1f; color: #fff;
-      box-shadow: 0 8px 20px rgba(0,0,0,.18);
-      transition: transform .05s ease-in-out, box-shadow .2s ease;
+    form input:focus, form textarea:focus{
+      border-color:#b08a2a; box-shadow:0 0 0 4px rgba(176,138,42,.15);
     }
-    button[type="submit"]:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,.22); }
-    .panel {
-      border: 1px dashed rgba(0,0,0,.15);
-      border-radius: var(--radius);
-      padding: 16px;
-      background: #fff;
+    .row{display:grid;grid-template-columns:1fr;gap:14px}
+    @media (min-width: 560px){ .row{ grid-template-columns:1fr 1fr; } }
+    button[type="submit"]{
+      margin-top:14px;display:inline-flex;gap:8px;align-items:center;justify-content:center;
+      padding:12px 18px;border:0;border-radius:12px;font-weight:800;cursor:pointer;
+      background:#111;color:#fff;box-shadow:0 10px 24px rgba(0,0,0,.18);
+      transition:transform .05s ease, box-shadow .15s ease;
     }
-    footer { text-align: center; color: #333; font-size: 14px; }
-    small.muted { color: var(--muted); }
+    button[type="submit"]:hover{ transform:translateY(-1px); box-shadow:0 12px 28px rgba(0,0,0,.22) }
+
+    /* Footer */
+    footer{padding:24px 0;text-align:center;color:#333}
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <a class="brand" href="/">
-      <!-- Update this path if your logo file differs -->
-      <img src="/Images/LANKEN LOGO RE.png" alt="LANKEN Holdings logo" />
-      <span>LANKEN Holdings</span>
-    </a>
-    <nav>
-      <!-- Add links as needed -->
-    </nav>
+    <div class="wrap nav">
+      <a class="brand" href="/">
+        <!-- Keep logo small in header only -->
+        <img src="/Images/LANKEN LOGO RE.png" alt="LANKEN Holdings logo" />
+        <span>LANKEN Holdings</span>
+      </a>
+      <nav class="menu">
+        <a href="#about">About</a>
+        <a href="#companies">Companies</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <div class="wrap">
+  <!-- Hero -->
+  <main class="wrap hero">
+    <div class="hero-inner">
+      <div>
+        <h1>Building and backing ventures with integrity, clarity, and performance.</h1>
+        <p class="lead">LANKEN Holdings is a parent company focused on aviation and transportation, with selective investments in adjacent industries.</p>
+      </div>
       <div class="card">
-        <div class="grid">
-          <section>
-            <h1>Contact Us</h1>
-            <p class="lead">Send us a note and we’ll respond promptly.</p>
-
-            <!-- ✅ Netlify Forms-compatible contact form -->
-            <form
-              name="contact"
-              method="POST"
-              action="/thanks.html"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-            >
-              <!-- Required hidden input so Netlify recognizes this form -->
-              <input type="hidden" name="form-name" value="contact" />
-
-              <!-- Honeypot field (spam trap) -->
-              <p style="display:none;">
-                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-              </p>
-
-              <div class="row">
-                <div>
-                  <label for="name">Name</label>
-                  <input id="name" name="name" type="text" autocomplete="name" required />
-                </div>
-                <div>
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" autocomplete="email" required />
-                </div>
-              </div>
-
-              <label for="company">Company (optional)</label>
-              <input id="company" name="company" type="text" autocomplete="organization" />
-
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" required></textarea>
-
-              <!-- Optional reCAPTCHA (enable in Netlify > Forms > Settings) -->
-              <!-- <div data-netlify-recaptcha="true"></div> -->
-
-              <button type="submit" aria-label="Send message">Send Message</button>
-
-              <small class="muted" style="display:block;margin-top:10px;">
-                Your submission is securely processed by Netlify.
-              </small>
-            </form>
-          </section>
-
-          <aside class="panel">
-            <h2 style="margin-top:0;">Other ways to reach us</h2>
-            <p><strong>Email:</strong> <a href="mailto:lankenholdings@gmail.com">lankenholdings@gmail.com</a></p>
-            <p><strong>Website:</strong> <a href="https://lankenholdings.com">lankenholdings.com</a></p>
-            <p><small class="muted">Tip: after deploying, check Netlify &rarr; Forms to confirm submissions appear under “contact”.</small></p>
-          </aside>
-        </div>
+        <h2 style="margin-top:0">At a glance</h2>
+        <ul style="margin:10px 0 0; padding-left:18px; line-height:1.7">
+          <li>Primary focus: Aviation & Transportation</li>
+          <li>Approach: Long-term, value-driven partnerships</li>
+          <li>Standard: 5-star client experience</li>
+        </ul>
       </div>
     </div>
   </main>
 
+  <!-- About -->
+  <section id="about" class="wrap section">
+    <div class="card">
+      <h2>About Us</h2>
+      <p class="muted">We form, acquire, and advise businesses with a bias toward operational excellence. Our passion and domain depth are strongest in aviation, where we help partners retain and grow UHNW customer bases through premium experiences.</p>
+    </div>
+  </section>
+
+  <!-- Companies -->
+  <section id="companies" class="wrap section">
+    <h2>Our Companies</h2>
+    <p class="muted" style="margin-bottom:16px">A growing portfolio under LANKEN Holdings.</p>
+    <div class="grid">
+      <article class="tile">
+        <span class="tag">Aviation</span>
+        <h3>Sky Cruises</h3>
+        <p class="muted">All-inclusive private-jet journeys with curated 5-star stays and land experiences.</p>
+      </article>
+      <article class="tile">
+        <span class="tag">Advisory</span>
+        <h3>LANIER Kennedy Advisory</h3>
+        <p class="muted">Consulting focused on aviation client experience, retention, and growth.</p>
+      </article>
+      <article class="tile">
+        <span class="tag">Media</span>
+        <h3>SANE Media (Advisory)</h3>
+        <p class="muted">Select advisory on partnerships and brand strategy.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="wrap section">
+    <div class="card">
+      <div class="row">
+        <div>
+          <h2>Contact Us</h2>
+          <p class="muted">Send us a note and we’ll respond promptly.</p>
+
+          <!-- ✅ Netlify Forms-compatible contact form -->
+          <form
+            name="contact"
+            method="POST"
+            action="/thanks.html"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <!-- Required hidden input so Netlify recognizes this form -->
+            <input type="hidden" name="form-name" value="contact" />
+
+            <!-- Honeypot field (spam trap) -->
+            <p style="display:none;">
+              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </p>
+
+            <div class="row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <label for="company">Company (optional)</label>
+            <input id="company" name="company" type="text" autocomplete="organization" />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <!-- Optional reCAPTCHA (enable in Netlify > Forms > Settings) -->
+            <!-- <div data-netlify-recaptcha="true"></div> -->
+
+            <button type="submit" aria-label="Send message">Send Message</button>
+            <div class="muted" style="margin-top:10px">Your submission is securely processed by Netlify.</div>
+          </form>
+
+          <!-- Hidden shadow form to ensure Netlify parses fields at build time (safe even if not needed) -->
+          <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+            <input type="hidden" name="form-name" value="contact" />
+            <input name="name" />
+            <input name="email" />
+            <input name="company" />
+            <textarea name="message"></textarea>
+          </form>
+        </div>
+
+        <aside class="card" style="background:#fff">
+          <h3 style="margin-top:0">Other ways to reach us</h3>
+          <p><strong>Email:</strong> <a href="mailto:lankenholdings@gmail.com">lankenholdings@gmail.com</a></p>
+          <p><strong>Website:</strong> <a href="https://lankenholdings.com">lankenholdings.com</a></p>
+          <p class="muted">After deploying, check Netlify → Forms to confirm submissions appear under “contact”.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <small class="muted">&copy; <span id="yr"></span> LANKEN Holdings. All rights reserved.</small>
+    <div class="wrap">
+      <small class="muted">&copy; <span id="yr"></span> LANKEN Holdings. All rights reserved.</small>
+    </div>
   </footer>
 
   <script>
